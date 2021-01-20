@@ -4,14 +4,15 @@ const producto = {
     disponile: true
 }
 
-const { nombre } = producto;
+const { nombre,precio } = producto;
 
-console.log(nombre);
+console.log(nombre,precio);
 
 //Destructuring con arreglos
 const numeros = [10,20,30,40,50];
 
-const [primero, ...segundo] = numeros;
+const [primero,segundo, ...tercero] = numeros;
 
 console.log(primero);
 console.log(segundo);
+console.log(tercero);

@@ -31,6 +31,7 @@ carrito.unshift(producto3);
 // Eliminar el ultimo elemento...
 //carrito.pop();
 
-carrito.splice(1,1);
+//agarra el elmento en posicion 1 y elimina un elemento
+carrito.splice(1,2);
 
 console.table(carrito);

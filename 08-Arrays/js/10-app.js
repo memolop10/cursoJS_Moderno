@@ -12,9 +12,9 @@ const nuevoArray = carrito.map( function(producto){
 
 //ForEach no te crea un nuevo array
 const nuevoArray2 = carrito.forEach( function(producto){
- return`${producto.nombre} - precio ${producto.precio}`
+  return`${producto.nombre} - precio ${producto.precio}`
 });
 
 console.log(nuevoArray);
 
-console.log(nuevoArray2)    ;
+console.log(nuevoArray2);
