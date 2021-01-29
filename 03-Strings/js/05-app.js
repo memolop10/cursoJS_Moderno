@@ -12,7 +12,7 @@ console.log(producto.slice(2,1));//no retornara nada, si el primer numero es may
 
 //Alternativa a slice
 console.log(producto.substring(0,10));
-console.log(producto.substring(2,1));//subtring si trata de hacer algo
+console.log(producto.substring(4,3));//subtring si trata de hacer algo
 
 //Obtener la primera letra del nombre de un usuario
 const usuario = 'MEMO';

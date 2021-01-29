@@ -13,5 +13,5 @@ console.log(actividad.split("",36));
 const hobbies = 'leer, caminar,escuchar musica,escribir'
 console.log(hobbies.split(","));
 
-const tweet = "Aprendiendo Javascript #JSModernoConMEMO";
+const tweet = "Aprendiendo Javascript #JSModerno#ConMEMO";
 console.log(tweet.split("#"));
