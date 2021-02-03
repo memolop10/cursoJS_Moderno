@@ -10,13 +10,13 @@ const producto = {
 
 //Object Producto
 
-function Producto(nombre, precio){
+function Producto(nombre, precio, disponible = true){
     this.nombre = nombre;
     this.precio = precio;
-    this.disponible = true;
+    this.disponible = disponible;
 }
 
-const producto2 = new Producto('Monitor 24 pulgadas', 500);
+const producto2 = new Producto('Monitor 24 pulgadas', 500, false);
 console.log(producto2);
 
 const producto3 = new Producto('Television', 450);

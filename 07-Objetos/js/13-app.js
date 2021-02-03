@@ -7,4 +7,4 @@ const producto = {
 console.log(Object.keys(producto));
 console.log(Object.values(producto));
 
-console.log(Object.entries(producto));
+console.log(Object.entries(producto));//imprime tanto el key como el value en forma de array
