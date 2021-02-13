@@ -15,7 +15,7 @@ function cargarEventListeners(){
     vaciarCarrito.addEventListener('click', () => {
         articulosCarrito = [];
 
-        limpiarHTML();
+       limpiarHTML();
     })
 }
 
@@ -24,14 +24,18 @@ function agregarCurso(e){
     e.preventDefault();
     //Me dice cual fue el elmento clickeado y
     //y sus 2 padres directos
-    const cursoSeleccionado = e.target.parentElement.parentElement;
-    leerDatosCurso(cursoSeleccionado)
+    if (e.target.classList.contains('agregar-carrito')) {
+        const cursoSeleccionado = e.target.parentElement.parentElement;//accesa a toda la card
+        leerDatosCurso(cursoSeleccionado)
+    }
+  
 }
 
 //Lee el contenido de HTML y extrae la info del curso clickeado
 function leerDatosCurso(cursoSeleccionado){
 
     //Crear un objeto con el contenido del curso actual
+    //Curso quye trata de agrgarse
     const infoCurso = {
         imagen: cursoSeleccionado.querySelector('img').src,
         titulo: cursoSeleccionado.querySelector('h4').textContent,
@@ -41,6 +45,7 @@ function leerDatosCurso(cursoSeleccionado){
     }
 
     //REvisa si un elemento ya existe en el carrito
+                                            //curso en carrito  //curso que se trata de agregar
     const existe = articulosCarrito.some( curso => curso.id === infoCurso.id );
     if(existe){
         //Actualizamos la cantidad
