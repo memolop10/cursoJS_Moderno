@@ -1,4 +1,4 @@
-const carrito = [];
+//const carrito = [];
 
 //definir un producto
 const producto = {
@@ -17,8 +17,32 @@ const producto3 = {
 }
 
 //forma declarativa
-let resultado = [...carrito,producto];
-    resultado = [...resultado,producto2];
-    resultado = [producto3, ...resultado];
+// let resultado = [...carrito,producto];
+//     resultado = [...resultado,producto2];
+//     resultado = [producto3, ...resultado];
 
-console.table(resultado);
+// console.table(resultado);
+
+
+const word = 'Hello';
+const letters = [...word];
+console.log(letters);
+
+const mainCharacters = ['Zelda','Link','Ganon'];
+const allCharacters = ['Navy',...mainCharacters,'Saria','Deku tree'];
+
+console.log(allCharacters);
+
+greetFullName = (name, lastName) =>{ 
+    return `Hello ${name} ${lastName}`;
+}
+
+const args = ['Memo','Lopez'];
+console.log(greetFullName(...args));
+
+                    //REst operator
+massGreeter = (greet, ...names) =>{
+   return names.map(name => `${greet}! ${name}`);
+}
+                                                       //Spred operator                     
+console.log(massGreeter('Hello','Memo','Luke','Lalito',...allCharacters));
