@@ -64,7 +64,7 @@ function leerDatosCurso(cursoSeleccionado){
 
     }
 
-    console.log(articulosCarrito);
+    console.log(articulosCarrito);  
     carritoHTML();  
 }
 
