@@ -54,15 +54,18 @@ maximo.addEventListener('change', e => {
 })
 
 puertas.addEventListener('change', e => {
-    datosBusqueda.puertas = e.target.value;
+    datosBusqueda.puertas = parseInt(e.target.value);
+    filtrarAuto()
 })
 
 transmision.addEventListener('change', e => {
     datosBusqueda.transmision = e.target.value;
+    filtrarAuto()
 })
 
 color.addEventListener('change', e => {
     datosBusqueda.color = e.target.value;
+    filtrarAuto()
     console.log(datosBusqueda)
 })
 
@@ -113,9 +116,28 @@ function filtrarAuto() {
     .filter(filtrarYear)
     .filter(filtrarMinimo)
     .filter(filtrarMaximo)
-    console.log(resultado)
+    .filter(filtrarPuertas)
+    .filter(filtrarTransmision)
+    .filter(filtrarColor)
 
-    mostrarAuto(resultado)
+    if (resultado.length) {
+        console.log(resultado)
+        mostrarAuto(resultado)
+    }else{
+        noResultado()
+    }
+    
+}
+
+function noResultado() {
+
+    limpiarHtml();
+    
+    const noResultContent = document.createElement('div');
+    noResultContent.classList.add('alerta','error');
+    noResultContent.textContent = 'No Hay resultados Karnal'
+    
+    resultado.appendChild(noResultContent);
 }
 
 function filtrarMarca(auto) {
@@ -150,6 +172,33 @@ function filtrarMaximo(auto) {
 
     if(maximo){
         return auto.precio <= maximo;
+    }
+    return auto;
+}
+
+function filtrarPuertas(auto) {
+    const {puertas} = datosBusqueda;
+
+    if( puertas ){
+        return auto.puertas === puertas;
+    }
+    return auto;
+}
+
+function filtrarTransmision(auto) {
+    const {transmision} = datosBusqueda;
+
+    if( transmision ){
+        return auto.transmision === transmision;
+    }
+    return auto;
+}
+
+function filtrarColor(auto) {
+    const {color} = datosBusqueda;
+
+    if( color ){
+        return auto.color === color;
     }
     return auto;
 }
