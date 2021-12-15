@@ -8,10 +8,10 @@ console.log(`${producto} ${texto} !!!`);
 
 //Split, dividir un string y lo convierte en un array
 const actividad = "Estoy aprendiendo Javascript Moderno";
-console.log(actividad.split("",36));
+console.log(actividad.split("",12));
 
 const hobbies = 'leer, caminar,escuchar musica,escribir'
 console.log(hobbies.split(","));
 
-const tweet = "Aprendiendo Javascript #JSModerno#ConMEMO";
+const tweet = "Aprendiendo Javascript JSModerno#ConMEMO";
 console.log(tweet.split("#"));
